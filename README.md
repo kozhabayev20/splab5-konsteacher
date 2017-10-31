@@ -25,8 +25,9 @@ Format your answers neatly and submit.
 .
 ```
 
----
 1. How do the threads behave?
 2. What is thread 0 doing?
 3. How would changing the interrupt interval (e.g., -i 1000, or perhaps to use random intervals) change the trace outcome?
 4. Is the program efficiently using the CPU?
+
+---
