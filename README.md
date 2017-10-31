@@ -4,11 +4,18 @@ This lab is the homework of [Chapter 26](http://www.cs.wisc.edu/~remzi/OSTEP/thr
 
 Format your answers neatly and submit.
 
-## Q1
-`./x86.py -p loop.s -t 1 -i 100 -R dx`
+### Q1
+
+```
+./x86.py -p loop.s -t 1 -i 100 -R dx
+.
+.
+.
+```
+
 ---
 
-## Q10
+### Q10
 
 ```
 ./x86.py -p wait-for-me.s -a ax=0,ax=1 -R ax -M 2000
@@ -16,8 +23,8 @@ Format your answers neatly and submit.
 .
 .
 .
-
 ```
+
 ---
 1. How do the threads behave?
 2. What is thread 0 doing?
