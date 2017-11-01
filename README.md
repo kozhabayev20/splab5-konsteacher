@@ -110,7 +110,7 @@ This makes the interrupt interval quite small and random; use different seeds wi
 
 ---
 1. __Does the frequency of interruption change anything about this program?__   
-_Frequency affect the interleaving, i.e. the frequency of interleaving, but not the resuly, because the two threads don't have _ __critical section.___
+_Frequency affect the interleaving, i.e. the frequency of interleaving, but not the resuly, because the two threads don't have_  __critical section.__
 
 ### Q4
 
