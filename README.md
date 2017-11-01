@@ -1,4 +1,4 @@
-# Lab5 - race condtion and critical section
+# Lab5 - race condition and critical section
 
 This lab is the homework of [Chapter 26](http://www.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf)
 
