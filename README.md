@@ -18,7 +18,7 @@ Format your answers neatly and submit.
 ```
 
 ---
-Can you figure out what the value of `%dx` will be during the run?  
+1. __Can you figure out what the value of `%dx` will be during the run?__  
 _`%dx` will be `-1`._
 
 ### Q2
@@ -56,10 +56,10 @@ _`%dx` will be `-1`._
    -1                            1003 halt
 ```
 ---
-1. What values will `%dx` see? Run with the `-c` flag to see the answers.  
+1. __What values will `%dx` see? Run with the `-c` flag to see the answers.__  
 _`%dx` decrements by 1 after each iteration, until it get equal `-1`._
 
-2. Does the presence of multiple threads affect anything about your calculations? Is there a race condition in this code?  
+2. __Does the presence of multiple threads affect anything about your calculations? Is there a race condition in this code?__  
 _Multiple threads don't affect our calculations because there is no race condtion. The threads are executed without interleavings because the threads complete before an interrupt occurs._
 
 ### Q10
