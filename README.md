@@ -56,10 +56,10 @@ _`%dx` will be `-1`._
    -1                            1003 halt
 ```
 ---
-What values will `%dx` see? Run with the `-c` flag to see the answers.  
+1. What values will `%dx` see? Run with the `-c` flag to see the answers.  
 _`%dx` decrements by 1 after each iteration, until it get equal `-1`._
 
-Does the presence of multiple threads affect anything about your calculations? Is there a race condition in this code?  
+2. Does the presence of multiple threads affect anything about your calculations? Is there a race condition in this code?  
 _Multiple threads don't affect our calculations because there is no race condtion. The threads are executed without interleavings because the threads complete before an interrupt occurs._
 
 ### Q10
