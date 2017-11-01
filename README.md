@@ -62,19 +62,82 @@ _`%dx` decrements by 1 after each iteration, until it get equal `-1`._
 2. __Does the presence of multiple threads affect anything about your calculations? Is there a race condition in this code?__  
 _Multiple threads don't affect our calculations because there is no race condtion. The threads are executed without interleavings because the threads complete before an interrupt occurs._
 
+### Q3
+
+```
+./x86.py -p loop.s -t 2 -i 3 -r -a dx=3,dx=3 -R dx
+...
+   dx          Thread 0                Thread 1         
+    3   
+    2   1000 sub  $1,%dx
+    2   1001 test $0,%dx
+    2   1002 jgte .top
+    3   ------ Interrupt ------  ------ Interrupt ------  
+    2                            1000 sub  $1,%dx
+    2                            1001 test $0,%dx
+    2                            1002 jgte .top
+    2   ------ Interrupt ------  ------ Interrupt ------  
+    1   1000 sub  $1,%dx
+    1   1001 test $0,%dx
+    1   1002 jgte .top
+    2   ------ Interrupt ------  ------ Interrupt ------  
+    1                            1000 sub  $1,%dx
+    1                            1001 test $0,%dx
+    1                            1002 jgte .top
+    1   ------ Interrupt ------  ------ Interrupt ------  
+    0   1000 sub  $1,%dx
+    0   1001 test $0,%dx
+    0   1002 jgte .top
+    1   ------ Interrupt ------  ------ Interrupt ------  
+    0                            1000 sub  $1,%dx
+    0                            1001 test $0,%dx
+    0                            1002 jgte .top
+    0   ------ Interrupt ------  ------ Interrupt ------  
+   -1   1000 sub  $1,%dx
+   -1   1001 test $0,%dx
+   -1   1002 jgte .top
+    0   ------ Interrupt ------  ------ Interrupt ------  
+   -1                            1000 sub  $1,%dx
+   -1                            1001 test $0,%dx
+   -1                            1002 jgte .top
+   -1   ------ Interrupt ------  ------ Interrupt ------  
+   -1   1003 halt
+   -1   ----- Halt;Switch -----  ----- Halt;Switch -----  
+   -1                            1003 halt
+```
+
+This makes the interrupt interval quite small and random; use different seeds with `-s` to see different interleavings.
+---
+1. __Does the frequency of interruption change anything about this program?__   
+_Frequency affect the interleaving, i.e. the frequency of interleaving, but not the resuly, because the two threads don't have _ __critical section.___
+
+### Q4
+
+
+### Q5
+
+### Q6
+
+### Q7
+
+### Q8
+
+### Q9
+
 ### Q10
+
+### Q11
 
 ```
 ./x86.py -p wait-for-me.s -a ax=0,ax=1 -R ax -M 2000
-
-.
-.
-.
+...
 ```
-
-1. How do the threads behave?
-2. What is thread 0 doing?
-3. How would changing the interrupt interval (e.g., -i 1000, or perhaps to use random intervals) change the trace outcome?
-4. Is the program efficiently using the CPU?
-
 ---
+
+1. __How do the threads behave?__
+
+2. __What is thread 0 doing?__
+
+3. __How would changing the interrupt interval (e.g., -i 1000, or perhaps to use random intervals) change the trace outcome?__
+
+4. __Is the program efficiently using the CPU?__
