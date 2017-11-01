@@ -21,6 +21,47 @@ Format your answers neatly and submit.
 Can you figure out what the value of `%dx` will be during the run?  
 `%dx` will be `-1`.
 
+### Q2
+```
+./x86.py -p loop.s -t 2 -i 100 -a dx=3,dx=3 -R dx -c
+...
+   dx          Thread 0                Thread 1         
+    3   
+    2   1000 sub  $1,%dx
+    2   1001 test $0,%dx
+    2   1002 jgte .top
+    1   1000 sub  $1,%dx
+    1   1001 test $0,%dx
+    1   1002 jgte .top
+    0   1000 sub  $1,%dx
+    0   1001 test $0,%dx
+    0   1002 jgte .top
+   -1   1000 sub  $1,%dx
+   -1   1001 test $0,%dx
+   -1   1002 jgte .top
+   -1   1003 halt
+    3   ----- Halt;Switch -----  ----- Halt;Switch -----  
+    2                            1000 sub  $1,%dx
+    2                            1001 test $0,%dx
+    2                            1002 jgte .top
+    1                            1000 sub  $1,%dx
+    1                            1001 test $0,%dx
+    1                            1002 jgte .top
+    0                            1000 sub  $1,%dx
+    0                            1001 test $0,%dx
+    0                            1002 jgte .top
+   -1                            1000 sub  $1,%dx
+   -1                            1001 test $0,%dx
+   -1                            1002 jgte .top
+   -1                            1003 halt
+```
+---
+What values will `%dx` see? Run with the `-c` flag to see the answers.  
+`%dx` decrements by 1 after each iteration, until it get equal `-1`.
+
+Does the presence of multiple threads affect anything about your calculations? Is there a race condition in this code?  
+Multiple threads don't affect our calculations because there is no race condtion. The threads are executed without interleavings because the threads complete before an interrupt occurs. 
+
 ### Q10
 
 ```
