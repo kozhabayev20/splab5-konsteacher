@@ -8,12 +8,17 @@ Format your answers neatly and submit.
 
 ```
 ./x86.py -p loop.s -t 1 -i 100 -R dx
-.
-.
-.
+...
+   dx          Thread 0         
+    0   
+   -1   1000 sub  $1,%dx
+   -1   1001 test $0,%dx
+   -1   1002 jgte .top
+   -1   1003 halt
 ```
 
 ---
+Can you figure out what the value of `%dx` will be during the run? `%dx` will be `-1`.
 
 ### Q10
 
