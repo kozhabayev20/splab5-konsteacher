@@ -18,7 +18,8 @@ Format your answers neatly and submit.
 ```
 
 ---
-Can you figure out what the value of `%dx` will be during the run? `%dx` will be `-1`.
+Can you figure out what the value of `%dx` will be during the run?  
+`%dx` will be `-1`.
 
 ### Q10
 
