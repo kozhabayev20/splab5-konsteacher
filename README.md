@@ -107,6 +107,7 @@ _Multiple threads don't affect our calculations because there is no race condtio
 ```
 
 This makes the interrupt interval quite small and random; use different seeds with `-s` to see different interleavings.
+
 ---
 1. __Does the frequency of interruption change anything about this program?__   
 _Frequency affect the interleaving, i.e. the frequency of interleaving, but not the resuly, because the two threads don't have _ __critical section.___
