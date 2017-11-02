@@ -127,8 +127,6 @@ _Frequency affect the interleavings, i.e. the frequency of interleavings, but no
 
 ### Q10
 
-### Q11
-
 ```
 ./x86.py -p wait-for-me.s -a ax=0,ax=1 -R ax -M 2000
 ...
